@@ -12,13 +12,13 @@ describe('AppController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
-    /*     app.useGlobalPipes(
+    app.useGlobalPipes(
       new ValidationPipe({
         whitelist: true,
         forbidNonWhitelisted: true,
         transform: true,
       }),
-    ); */
+    );
     await app.init();
   });
 
@@ -37,7 +37,7 @@ describe('AppController (e2e)', () => {
         .send({
           title: 'Test',
           year: 2000,
-          gener: ['test'],
+          genres: ['test'],
         })
         .expect(201);
     });
